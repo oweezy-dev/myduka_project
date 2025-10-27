@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Stocks page</h1>
-    <p>{{stocks}}</p>
+    
     <table class="table">
   <thead>
     <tr>
@@ -18,6 +18,14 @@
       <th scope="col">stock_quantity</th>
       
     </tr>
+    {% for i in stocks %}
+    <tr>
+        <td>{{stocks[0]}}</td>
+        <td>{{stocks[1]}}</td>
+        <td>{{stocks[2]}}</td>
+        <td>{{stocks[3]}}</td>
+    </tr>
+    {% endfor %}
   </thead>
     </table>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

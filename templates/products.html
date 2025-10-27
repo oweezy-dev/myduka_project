@@ -12,7 +12,7 @@
     
 <body>
     <h1>products page</h1>
-    <p>{{products}}</p>
+<p>{{products}}</p>
     <table class="table">
   <thead>
     <tr>
@@ -22,6 +22,16 @@
       <th scope="col">selling_price</th>
     </tr>
   </thead>
+  <tbody>
+    {% for product in products %}
+    <tr>
+        <td>{{product[0]}}</td>
+        <td>{{product[1]}}</td>
+        <td>{{product[2]}}</td>
+        <td>{{product[3]}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
   
 </table>
     

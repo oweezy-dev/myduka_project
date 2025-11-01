@@ -1,5 +1,5 @@
-from flask import Flask,render_template#plan
-from database import fetch_data
+from flask import Flask,render_template,request,redirect,url_for#plan
+from database import fetch_data,insert_products,insert_sales,insert_stock
 #instance of the flask class
 app = Flask(__name__)
 
@@ -7,24 +7,74 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
+#route for dashboard
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
+
+
 @app.route('/products')
 def prods():
     prods=fetch_data('products')
    
     return render_template('products.html',products=prods)
+
+#create a python function that receives data from the ui to the serverside
+@app.route('/add_products',methods=['GET','POST'])
+def add_products():
+    #checking method
+    if request.method=='POST':
+        #get form data/input
+        pname=request.form['product name']
+        bprice=request.form['buying price']
+        sprice=request.form['selling price']
+        new_product=(pname,bprice,sprice)
+        #insert to the database by calling the function
+        insert_products(new_product)
+        return redirect(url_for('prods'))
+        
+
+    
 #route for sales
 @app.route('/sales')
 def sales1():
     sales=fetch_data('sales')
+    products=fetch_data('products')#table to fetch from
     
-    return render_template('sales.html',sls=sales)
+    return render_template('sales.html',sls=sales,products=products)
+#create a python function that receives data from the ui to the serverside
+@app.route('/add_sales',methods=['GET','POST'])
+def add_sales():
+     #checking method
+    if request.method=='POST':
+        #get form data/input
+        pid=request.form['product_id']
+        quantity=request.form['Quantity']
+        new_sale=(pid,quantity)
+        #insert to the database by calling the function
+        insert_sales(new_sale)
+        return redirect(url_for('sales1'))#url for takes the function name
 
 #route for stock
 @app.route('/stocks')
 def stock1():
     stocks=fetch_data('stock')
+    products=fetch_data('products')#table to fetch from
    
-    return render_template('stocks.html',stocks=stocks)
+    return render_template('stocks.html',stocks=stocks,products=products)
+
+#create a python function that receives data from the ui to the serverside
+@app.route('/add_stocks',methods=['GET','POST'])
+def add_stocks():
+     #checking method
+    if request.method=='POST':
+        #get form data/input
+        pid=request.form['Product_id']
+        stock_qty=request.form['stock_quantity']
+        new_stock=(pid,stock_qty)
+        #insert to the database by calling the function
+        insert_stock(new_stock)
+        return redirect(url_for('stock1'))#url for takes the function name
 
 #run the app
-app.run()
+app.run(debug=True)

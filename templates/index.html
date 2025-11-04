@@ -7,13 +7,19 @@
   <title>Document</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="../static/styles.css/index.css">
+
 
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg   bg-warning opacity-100  w-100">
     <div class="container-fluid">
+      <i class="fa-solid fa-cart-shopping"></i>
       <a class="navbar-brand" href="#">MyDuka</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,9 +38,143 @@
       </div>
     </div>
   </nav>
-  <h1>Home page</h1>
-  <img src="../static/images/hand-swiping-credit-card-store-female-hands-with-credit-card-bank-terminal-color-image-pos-credit-cards.jpg" alt="MyDuka Image" class="img-fluid">
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <div class="container mt-4 bg-grey">
+    <div class="row g-2">
+      <div class="col-sm-6">
+        <h1>Fast and adaptable POS System for yor enterprise</h1>
+        <p>Grow your sales,document your inventory and build your business with this<br> efficient Point of sale system
+          solution</p>
+        <a href="/products" class="btn btn-warning m-5">Get Started</a>
+      </div>
+      <div class="col-sm-6">
+        <img src="../static/images/img4.jpg" class="img-fluid rounded-circle" alt="Responsive image">
+
+
+      </div>
+
+    </div>
+  </div>
+
+  <div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../static/images/img.o.jpg" class="d-block w-100 h-50" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Shop with us</h5>
+          <p>Get the best deals</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img
+          src="../static/images/hand-swiping-credit-card-store-female-hands-with-credit-card-bank-terminal-color-image-pos-credit-cards.jpg"
+          class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Easy Transaction services</h5>
+          <p>We got you sorted after all:credit and debit.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../static/images/img3.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Be on the lookout.</h5>
+          <p>Discounted sales key days.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="container  text-center mt-2">
+    <hr>
+    <hr>
+    <h1>More Features</h1>
+    <p>Great insight on ways to overseee your business easily</p>
+    <i class="fa-solid fa-list fa-2xl"></i>
+  </div>
+  <div class="container mt-5 mb-2">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <i class="fa-brands fa-product-hunt fa-xl"></i>
+            <h6 class="card-title text-center">Product management</h6>
+            <p class="card-text">Easy adding ,updating and deleting of products in your inventory.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <i class="fa-solid fa-arrow-trend-up fa-xl"></i>
+            <h6 class="card-title text-center">Batch sales</h6>
+            <p class="card-text">Process vast amount of products in a single transaction</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <i class="fa-brands fa-intercom fa-xl"></i>
+            <h6 class="card-title text-center">Customer Management</h6>
+            <p class="card-text">Maintains a comprehensive database of your users,customers</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   <div class="container mt-5 mb-2">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <i class="fa-solid fa-chart-simple fa-xl"></i>
+            <h6 class="card-title text-center">Analytics dashboard</h6>
+            <p class="card-text">Track sales,profits with precise bar and line graphs</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <i class="fa-solid fa-receipt fa-xl"></i>
+            <h6 class="card-title text-center">Receipt</h6>
+            <p class="card-text">Instant generation of receipts upon purchase</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <i class="fa-solid fa-warehouse fa-xl"></i>
+            <h6 class="card-title text-center">Inventory tracking</h6>
+            <p class="card-text">Constant update on sales and stock.Keep up.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="bg-warning text-center text-lg-start mt-4">
+    <div class="text-center position-fixed-bottom p-3">
+      © 2025 MyDuka. All rights reserved.
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
     integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"

@@ -1,5 +1,5 @@
 from flask import Flask,render_template,request,redirect,url_for#plan
-from database import fetch_data,insert_products,insert_sales,insert_stock
+from database import fetch_data,insert_products,insert_sales,insert_stock,calculate_profit,calculate_sales
 #instance of the flask class
 app = Flask(__name__)
 
@@ -10,7 +10,26 @@ def home():
 #route for dashboard
 @app.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html')
+    profits=calculate_profit()
+    sales=calculate_sales()
+    #print(sales)
+    #print(profit)
+    product_names=[]
+    product_profits=[]
+    for profit in profits:
+        product_names.append(profit[0])
+        product_profits.append(float(profit[2]))
+
+    product_sales=[]    
+    products_names=[]    
+    for sale in sales:
+        products_names.append(sale[0])
+        product_sales.append(float(sale[2]))
+
+
+        
+       
+    return render_template('dashboard.html',product_names=product_names,product_profits=product_profits,product_sales=product_sales,products_names=products_names)
 
 
 @app.route('/products')

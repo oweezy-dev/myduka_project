@@ -93,8 +93,8 @@ def insert_sales(values):
 
 #profit per product
 def calculate_profit():
-    query='select p.name,p.id,sum((p.selling_price - p.buying_price)* s.quantity) as profit '
-    'from sales as s join products as p on s.pid = p.id group by p.name, p.id;'
+    query='select p.name,p.id,sum((p.selling_price - p.buying_price)* s.quantity) as profit from sales as s join products as p on s.pid = p.id group by p.name, p.id; '
+    
     curr.execute(query)
     profits=curr.fetchall()
     return profits
@@ -103,10 +103,29 @@ def calculate_profit():
 
 #sales per product
 def calculate_sales():
-    query='select p.name,p.id,sum(p.selling_price * s.quantity) as total_sales from sales' 
-    ' as s join products as p on s.pid = p.id group by p.name, p.id;'
+    query='select p.name,p.id,sum(p.selling_price * s.quantity) as total_sales from sales as s join products as p on s.pid = p.id group by p.name, p.id;'
+    
     curr.execute(query)
     sales=curr.fetchall()
     return sales
 # mysales=calculate_sales() 
 # print(f'my total_sales are:{mysales}')
+#query to get sales per day
+def calculate_daily_sales():
+    query='select DATE(s.created_at) as sale_date, sum(p.selling_price * s.quantity) as daily_sales from sales as s join products as p on s.pid = p.id group by sale_date order by sale_date;'
+    
+    curr.execute(query)
+    daily_sales=curr.fetchall()
+    return daily_sales
+# mydaily_sales=calculate_daily_sales()
+# print(f'my daily sales are:{mydaily_sales}')
+#query to get profit per day
+
+def calculate_daily_profit():
+    query='select DATE(s.created_at) as sale_date, sum((p.selling_price - p.buying_price) * s.quantity) as daily_profit from sales as s join products as p on s.pid = p.id group by sale_date order by sale_date;'
+    
+    curr.execute(query)
+    daily_profits=curr.fetchall()
+    return daily_profits    
+# mydaily_profits=calculate_daily_profit()
+# print(f'my daily profits are:{mydaily_profits}')
